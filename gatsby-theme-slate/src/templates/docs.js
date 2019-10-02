@@ -4,7 +4,6 @@ import Docs from '../components/docs'
 
 export default class DocTemplate extends Component {
   render() {
-    console.log(this.props)
     const docsData = this.props.data.allMarkdownRemark.nodes
     return (
       <Docs docs={docsData}/>
