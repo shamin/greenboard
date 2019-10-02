@@ -1,12 +1,13 @@
 import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Code from './code'
 
 export default function PreContainer(codeBlocks) {
   return (props) => {
-    // console.log(props)
-    // temp1.children[0].props.className
-    console.log(codeBlocks.filter((code)=>compareCodeBlockAndAst(code[props.children[0].props.className], props)))
-    return <div>Code Block</div>
+    const codes = codeBlocks.filter((code) => compareCodeBlockAndAst(code[props.children[0].props.className], props))
+    return <div>
+      {(codes !== undefined) ?
+        <Code codes={codes[0]} /> : "Nothing"}
+    </div>
   }
 }
 
@@ -15,7 +16,7 @@ const getCodeText = (pre) => {
 }
 
 const compareCodeBlockAndAst = (codeBlock, ast) => {
-  if(codeBlock !== undefined && ast !== undefined)
+  if (codeBlock !== undefined && ast !== undefined)
     return codeBlock.children[0].children[0].value === ast.children[0].props.children[0]
   return <div>Nothing</div>
 }
