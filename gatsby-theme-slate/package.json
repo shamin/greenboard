@@ -17,7 +17,10 @@
     "gatsby": "^2.15.28",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-remark": "^2.6.26",
+    "lodash": "^4.17.15",
+    "prism-react-renderer": "^1.0.1",
     "react": "^16.10.1",
-    "react-dom": "^16.10.1"
+    "react-dom": "^16.10.1",
+    "rehype-react": "^4.0.1"
   }
 }
