@@ -3,23 +3,32 @@ import _ from "lodash"
 import RehypeReact from 'rehype-react'
 import Pre from './pre'
 
-const renderAst = (codeBlocks) => {
+const renderAst = (codeBlocks, elementsRendered, updateRendered) => {
   return new RehypeReact({
     createElement: React.createElement,
     components: {
-      'pre': Pre(codeBlocks)
+      'pre': Pre(codeBlocks, elementsRendered, updateRendered)
     },
   }).Compiler;
 }
 
 export default class Contents extends Component {
+  constructor(props) {
+    super(props)
+    this.codeBlocksRendered = []
+    this.renderedCodeBlock = this.renderedCodeBlock.bind(this)
+  }
+
+  renderedCodeBlock(index) {
+    this.codeBlocksRendered.push(index)
+  }
+
   render() {
     const { docs } = this.props
     const codeBlocks = parseDocs(docs)
-    console.log(docs.htmlAst)
     return (
       <div>
-        {renderAst(codeBlocks)(docs.htmlAst)}
+        {renderAst(codeBlocks, this.codeBlocksRendered, this.renderedCodeBlock)(docs.htmlAst)}
       </div>
     )
   }

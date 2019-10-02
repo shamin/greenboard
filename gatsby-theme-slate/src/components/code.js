@@ -9,7 +9,7 @@ export default class Code extends Component {
   render() {
     return (
       <div>
-        <Highlight {...defaultProps} code={this.props.codes["language-javascript"].children[0].children[0].value} language="javascript" >
+        <Highlight {...defaultProps} code={this.props.codes["language-ruby"].children[0].children[0].value} language="javascript" >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre className={className} style={style}>
               {tokens.map((line, i) => (

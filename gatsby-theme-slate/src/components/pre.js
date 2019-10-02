@@ -1,13 +1,21 @@
 import React from 'react'
+import _ from 'lodash'
 import Code from './code'
 
-export default function PreContainer(codeBlocks) {
+export default function PreContainer(codeBlocks, elementsRendered, updateRendered) {
   return (props) => {
-    const codes = codeBlocks.filter((code) => compareCodeBlockAndAst(code[props.children[0].props.className], props))
-    return <div>
-      {(codes !== undefined) ?
-        <Code codes={codes[0]} /> : "Nothing"}
-    </div>
+    const codeIndex = codeBlocks.findIndex((code, index) =>
+      compareCodeBlockAndAst(code[props.children[0].props.className], props)
+      && !_.includes(elementsRendered, index))
+    const codes = codeBlocks[codeIndex]
+    updateRendered(codeIndex)
+    if (codeIndex > -1) {
+      return <div>
+        {(codes !== undefined) ?
+          <Code codes={codes} /> : "Nothing"}
+      </div>
+    }
+    return <div></div>
   }
 }
 
