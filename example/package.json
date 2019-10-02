@@ -14,9 +14,5 @@
     "gatsby-theme-slate": "^1.0.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
-  },
-  "peerDependencies": {
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1"
   }
 }
