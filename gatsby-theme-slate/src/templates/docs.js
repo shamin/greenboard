@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
+import { graphql } from "gatsby"
+import Docs from '../components/docs'
 
 export default class DocTemplate extends Component {
   render() {
+    console.log(this.props)
+    const docsData = this.props.data.allMarkdownRemark.nodes
     return (
-      <div>Doc lies here</div>
+      <Docs docs={docsData}/>
     )
   }
 }
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark {
+      nodes {
+        html
+        htmlAst
+      }
+    }
+  }
+`
