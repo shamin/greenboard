@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import _ from "lodash"
 import RehypeReact from 'rehype-react'
+import Pre from './pre'
 
-const renderAst = (code_blocks) => {
+const renderAst = (codeBlocks) => {
   return new RehypeReact({
     createElement: React.createElement,
     components: {
-
+      'pre': Pre(codeBlocks)
     },
   }).Compiler;
 }
@@ -14,11 +15,11 @@ const renderAst = (code_blocks) => {
 export default class Contents extends Component {
   render() {
     const { docs } = this.props
-    // parseDocs(docs)
+    const codeBlocks = parseDocs(docs)
     console.log(docs.htmlAst)
     return (
       <div>
-        {renderAst(0)(docs.htmlAst)}
+        {renderAst(codeBlocks)(docs.htmlAst)}
       </div>
     )
   }
@@ -38,7 +39,7 @@ const parseDocs = (docs) => {
       codeBlock[property] = e
     }
   })
-  console.log(codeBlocks)
+  return codeBlocks
 }
 
 const fetchChildType = (code_block) => {
