@@ -17,6 +17,9 @@ export const pageQuery = graphql`
       nodes {
         html
         htmlAst
+        frontmatter {
+          language_tabs
+        }
       }
     }
   }

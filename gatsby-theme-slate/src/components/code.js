@@ -7,9 +7,10 @@ export default class Code extends Component {
   }
 
   render() {
+    const { language } = this.props
     return (
       <div>
-        <Highlight {...defaultProps} code={this.props.codes["language-ruby"].children[0].children[0].value} language="javascript" >
+        <Highlight {...defaultProps} code={this.props.codes[`language-${language}`].children[0].children[0].value} language="javascript" >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre className={className} style={style}>
               {tokens.map((line, i) => (
