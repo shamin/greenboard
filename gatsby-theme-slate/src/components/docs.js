@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import _ from "lodash"
 import Contents from './contents'
+import AsideMenu from './asidemenu'
 
 export default class Docs extends Component {
   constructor(props) {
@@ -32,15 +33,20 @@ export default class Docs extends Component {
     const { docs } = this.props
     const { options, selected } = this.state
     return (
-      <div className="page-wrapper">
-        <div className="dark-box">
-          <div className="lang-selector">
-            {options.map((e) => <a onClick={()=>this.setLang(e)} className={selected === e ? "active" : ""}>{e}</a>)}
-          </div>
+      <React.Fragment>
+        <div className="toc-wrapper">
+          <AsideMenu docs={docs[0]}/>
         </div>
-        <Contents docs={docs[0]} language={selected} />
-        <div className="dark-box"></div>
-      </div>
+        <div className="page-wrapper">
+          <div className="dark-box">
+            <div className="lang-selector">
+              {options.map((e) => <a key={e} onClick={() => this.setLang(e)} className={selected === e ? "active" : ""}>{e}</a>)}
+            </div>
+          </div>
+          <Contents docs={docs[0]} language={selected} />
+          <div className="dark-box"></div>
+        </div>
+      </React.Fragment>
     )
   }
 }
