@@ -24,20 +24,20 @@ export default class Docs extends Component {
     this.setState({ selected: event.target.value });
   }
 
+  setLang(lang) {
+    this.setState({ selected: lang });
+  }
+
   render() {
     const { docs } = this.props
     const { options, selected } = this.state
     return (
       <div className="page-wrapper">
-        {/* <div style={{
-          marginTop: 20,
-          marginLeft: 100
-        }}>
-          <select value={selected} onChange={this.handleChange}>
-            {options.map((e) => <option key={e} value={e}>{e}</option>)}
-          </select>
-        </div> */}
-        <div className="dark-box"></div>
+        <div className="dark-box">
+          <div className="lang-selector">
+            {options.map((e) => <a onClick={()=>this.setLang(e)} className={selected === e ? "active" : ""}>{e}</a>)}
+          </div>
+        </div>
         <Contents docs={docs[0]} language={selected} />
         <div className="dark-box"></div>
       </div>

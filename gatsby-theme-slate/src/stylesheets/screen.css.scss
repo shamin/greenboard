@@ -280,6 +280,7 @@ html, body {
   width: 100%;
   font-weight: bold;
   a {
+    cursor: pointer;
     display: block;
     float:left;
     color: $lang-select-text;
@@ -599,3 +600,4 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
