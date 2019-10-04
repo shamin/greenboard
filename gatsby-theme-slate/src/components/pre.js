@@ -10,12 +10,12 @@ export default function PreContainer(codeBlocks, elementsRendered, updateRendere
     const codes = codeBlocks[codeIndex]
     updateRendered(codeIndex)
     if (codeIndex > -1) {
-      return <div>
+      return <React.Fragment>
         {(codes !== undefined) ?
-          <Code codes={codes} language={language}/> : "Nothing"}
-      </div>
+          <Code codes={codes} language={language} /> : "Nothing"}
+      </React.Fragment>
     }
-    return <div></div>
+    return <React.Fragment/>
   }
 }
 

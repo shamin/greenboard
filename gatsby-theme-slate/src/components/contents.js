@@ -31,7 +31,7 @@ export default class Contents extends Component {
     const { docs, language } = this.props
     const codeBlocks = parseDocs(docs)
     return (
-      <div>
+      <div className="content">
         {renderAst(codeBlocks, this.codeBlocksRendered, this.renderedCodeBlock, language)(docs.htmlAst)}
       </div>
     )
