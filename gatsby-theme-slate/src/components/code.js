@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
 export default class Code extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { language } = this.props
     return (

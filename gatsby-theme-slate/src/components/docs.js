@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import _ from "lodash"
 import Contents from './contents'
 import AsideMenu from './asidemenu'
 

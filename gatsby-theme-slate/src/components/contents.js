@@ -49,7 +49,9 @@ const parseDocs = (docs) => {
       codeBlock = {}
     } else if (_.includes(["pre"], e.tagName)) {
       let property = fetchChildType(e)
-      codeBlock[property] = e
+      if (property !== "language-json") {
+        codeBlock[property] = e
+      }
     }
   })
   return codeBlocks
