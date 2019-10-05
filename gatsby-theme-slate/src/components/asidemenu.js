@@ -48,8 +48,8 @@ export default class AsideMenu extends Component {
     this.setState({ activeNavItem: headersScrollTop[0] });
   }
 
-  getLinks(docs) {
-    const headers = docs.htmlAst.children.filter(el => el.type === 'element' && _.includes(['h1', 'h2'], el.tagName));
+  getLinks(ast) {
+    const headers = ast.children.filter(el => el.type === 'element' && _.includes(['h1', 'h2'], el.tagName));
 
     const beautified = headers.map((header) => {
       const link = {};
@@ -89,9 +89,9 @@ export default class AsideMenu extends Component {
   }
 
   render() {
-    const { docs } = this.props
+    const { ast } = this.props
     const { activeNavItem } = this.state
-    const links = this.getLinks(docs)
+    const links = this.getLinks(ast)
     return (
       <React.Fragment>
         <ul className="toc-list-h1">

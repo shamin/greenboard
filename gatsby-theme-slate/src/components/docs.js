@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Contents from './contents'
 import AsideMenu from './asidemenu'
 import LangSelector from './langselector'
+import { remarkHeaders } from '../utils/htmlAst'
 
 export default class Docs extends Component {
   constructor(props) {
@@ -29,20 +30,22 @@ export default class Docs extends Component {
   render() {
     const { docs } = this.props
     const { options, selected } = this.state
+    const ast = remarkHeaders(docs.htmlAst)
     return (
       <React.Fragment>
-        <LangSelector
-          options={options}
-          selected={selected}
-          setLang={this.setLang} />
-        {/* <div className="toc-wrapper">
-          <AsideMenu docs={docs[0]}/>
+        <div className="toc-wrapper">
+          <AsideMenu ast={ast}/>
         </div>
         <div className="page-wrapper">
-          
-          <Contents docs={docs[0]} language={selected} />
+          <LangSelector
+            options={options}
+            selected={selected}
+            setLang={this.setLang} />
+          <Contents
+            htmlAst={ast}
+            language={selected} />
           <div className="dark-box"></div>
-        </div> */}
+        </div>
       </React.Fragment>
     )
   }
