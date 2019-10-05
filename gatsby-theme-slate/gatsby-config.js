@@ -8,6 +8,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`remark-headers`],
+      },
     },
     `gatsby-plugin-sass`
   ],
