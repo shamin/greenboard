@@ -27,7 +27,7 @@ export default class AsideMenu extends Component {
     const headers = Array.from(document.querySelectorAll(selector));
 
     const headersOffset = headers.map((el, i) => {
-      const slug = el.textContent;
+      const slug = el.id;
       let nextEl;
 
       if ((headers.length - 1) !== i) {
@@ -54,32 +54,30 @@ export default class AsideMenu extends Component {
     const beautified = headers.map((header) => {
       const link = {};
       link.tagName = header.tagName;
-      link.textNode = header.children[0] ? header.children[0].value : '';
+      link.textNode = header.children[1] ? header.children[1].value : '';
       link.id = header.properties.id;
       return link;
     });
 
-    let h2s, h1text
+    let h2s, h1Element
     const merged = []
     beautified.forEach((heading, index) => {
       if (heading.tagName === "h1") {
         if (h2s !== undefined) {
           merged.push({
-            textNode: h1text,
-            tagName: "h1",
+            ...h1Element,
             children: h2s
           })
         }
         h2s = []
-        h1text = heading.textNode
+        h1Element = heading
       } else if (heading.tagName === "h2") {
         h2s.push(heading)
       }
     })
     if (h2s !== undefined) {
       merged.push({
-        textNode: h1text,
-        tagName: "h1",
+        ...h1Element,
         children: h2s
       })
     }
@@ -87,7 +85,7 @@ export default class AsideMenu extends Component {
   }
 
   isChild(parent, slug) {
-    return (parent.children.findIndex((e) => e.textNode === slug) >= 0)
+    return (parent.children.findIndex((e) => e.id === slug) >= 0)
   }
 
   render() {
@@ -98,10 +96,10 @@ export default class AsideMenu extends Component {
       <React.Fragment>
         <ul className="toc-list-h1">
           {links.map((linkh1) =>
-            <li key={linkh1.textNode}>
-              <a className={`toc-h1 toc-link ${activeNavItem.slug === linkh1.textNode ? "active" : ""} ${this.isChild(linkh1, activeNavItem.slug) ? "active-parent" : ""}`}>{linkh1.textNode}</a>
+            <li key={linkh1.id}>
+              <a href={`#${linkh1.id}`} className={`toc-h1 toc-link ${activeNavItem.slug === linkh1.id ? "active" : ""} ${this.isChild(linkh1, activeNavItem.slug) ? "active-parent" : ""}`}>{linkh1.textNode}</a>
               <ul className={`toc-list-h2 active ${this.isChild(linkh1, activeNavItem.slug) ? "active" : ""}`} style={{ display: this.isChild(linkh1, activeNavItem.slug) ? "block" : "none" }}>
-                {linkh1.children.map((linkh2) => <a key={linkh2.textNode} className={`toc-h2 toc-link ${activeNavItem.slug === linkh2.textNode ? "active" : ""}`}>{linkh2.textNode}</a>)}
+                {linkh1.children.map((linkh2) => <a key={linkh2.id} href={`#${linkh2.id}`} className={`toc-h2 toc-link ${activeNavItem.slug === linkh2.id ? "active" : ""}`}>{linkh2.textNode}</a>)}
               </ul>
             </li>
           )}
