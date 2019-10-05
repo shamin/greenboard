@@ -99,8 +99,8 @@ export default class AsideMenu extends Component {
         <ul className="toc-list-h1">
           {links.map((linkh1) =>
             <li key={linkh1.textNode}>
-              <a className={`toc-h1 toc-link ${activeNavItem.slug === linkh1.textNode ? "active" : ""}`}>{linkh1.textNode}</a>
-              <ul className={`toc-list-h2 active ${this.isChild(linkh1, activeNavItem.slug) ? "active-parent" : ""}`} style={{ display: this.isChild(linkh1, activeNavItem.slug) ? "block" : "none" }}>
+              <a className={`toc-h1 toc-link ${activeNavItem.slug === linkh1.textNode ? "active" : ""} ${this.isChild(linkh1, activeNavItem.slug) ? "active-parent" : ""}`}>{linkh1.textNode}</a>
+              <ul className={`toc-list-h2 active ${this.isChild(linkh1, activeNavItem.slug) ? "active" : ""}`} style={{ display: this.isChild(linkh1, activeNavItem.slug) ? "block" : "none" }}>
                 {linkh1.children.map((linkh2) => <a key={linkh2.textNode} className={`toc-h2 toc-link ${activeNavItem.slug === linkh2.textNode ? "active" : ""}`}>{linkh2.textNode}</a>)}
               </ul>
             </li>
