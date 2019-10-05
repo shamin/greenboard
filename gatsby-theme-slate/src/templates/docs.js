@@ -5,23 +5,21 @@ import '../stylesheets/screen.css.scss'
 
 export default class DocTemplate extends Component {
   render() {
-    const docsData = this.props.data.allMarkdownRemark.nodes
+    const docsData = this.props.data.markdownRemark
     return (
-      <Docs docs={docsData}/>
+      <Docs docs={docsData} />
     )
   }
 }
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark {
-      nodes {
-        html
-        htmlAst
-        frontmatter {
-          language_tabs
-        }
+  query MyQuery {
+    markdownRemark(fileAbsolutePath: {ne: "docs/index.md"}) {
+      html
+      htmlAst
+      frontmatter {
+        language_tabs
       }
     }
-  }
+  }  
 `

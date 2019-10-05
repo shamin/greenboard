@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Contents from './contents'
 import AsideMenu from './asidemenu'
+import LangSelector from './langselector'
 
 export default class Docs extends Component {
   constructor(props) {
@@ -9,19 +10,16 @@ export default class Docs extends Component {
       options: [],
       selected: ""
     }
-    this.handleChange = this.handleChange.bind(this)
   }
 
   componentWillMount() {
-    const langs = this.props.docs[0].frontmatter.language_tabs
+    const langs = this.props.docs.frontmatter.language_tabs
     this.setState({
       options: langs,
       selected: langs[0]
     })
-  }
 
-  handleChange(event) {
-    this.setState({ selected: event.target.value });
+    this.setLang = this.setLang.bind(this)
   }
 
   setLang(lang) {
@@ -33,18 +31,18 @@ export default class Docs extends Component {
     const { options, selected } = this.state
     return (
       <React.Fragment>
-        <div className="toc-wrapper">
+        <LangSelector
+          options={options}
+          selected={selected}
+          setLang={this.setLang} />
+        {/* <div className="toc-wrapper">
           <AsideMenu docs={docs[0]}/>
         </div>
         <div className="page-wrapper">
-          <div className="dark-box">
-            <div className="lang-selector">
-              {options.map((e) => <a key={e} onClick={() => this.setLang(e)} className={selected === e ? "active" : ""}>{e}</a>)}
-            </div>
-          </div>
+          
           <Contents docs={docs[0]} language={selected} />
           <div className="dark-box"></div>
-        </div>
+        </div> */}
       </React.Fragment>
     )
   }

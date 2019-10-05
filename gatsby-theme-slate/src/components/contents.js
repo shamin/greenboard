@@ -7,6 +7,7 @@ const renderAst = (codeBlocks, elementsRendered, updateRendered, language) => {
   return new RehypeReact({
     createElement: React.createElement,
     components: {
+      'h1': <div>Heading</div>,
       'pre': Pre(codeBlocks, elementsRendered, updateRendered, language)
     },
   }).Compiler;
@@ -21,6 +22,10 @@ export default class Contents extends Component {
 
   renderedCodeBlock(index) {
     this.codeBlocksRendered.push(index)
+  }
+
+  componentDidMount() {
+    this.codeBlocksRendered = []
   }
 
   componentDidUpdate() {
