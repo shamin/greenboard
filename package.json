@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-theme-workspace",
+  "name": "gatsby-slate-theme-workspace",
   "private": true,
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace example build"
+    "develop-example": "yarn workspace example develop",
+    "build-example": "yarn workspace example build"
   },
   "workspaces": [
     "gatsby-theme-slate",

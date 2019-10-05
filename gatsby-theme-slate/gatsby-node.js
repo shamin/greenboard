@@ -1,20 +1,18 @@
 const fs = require('fs')
-const path = require('path')
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }) => {
-  const contentPath = 'data'
+  const contentPath = 'data/index.html.md'
 
   if(!fs.existsSync(contentPath)) {
-    reporter.info(`creating the ${contentPath} directory`)
-    fs.mkdirSync(contentPath)
+    reporter.panic(`File not found - Make sure you have data/index.html.md file`)
   }
 }
 
 // Creating a page with  docs/index.md file
 exports.createPages = async ({actions, graphql, reporter}) => {
   const basePath = '/'
-  const docTemplate = path.resolve(`src/templates/docs.js`)
+  const docTemplate = require.resolve(`./src/templates/docs.js`)
   
   actions.createPage({
     path: basePath,
