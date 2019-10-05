@@ -1,0 +1,19 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+node_js:
+  - '9'
+git:
+  depth: 3
+script:
+  - yarn && yarn run build-example
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: example/public
+  target-branch: gh-pages
+  on:
+    branch: master
