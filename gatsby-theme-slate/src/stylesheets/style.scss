@@ -18,6 +18,7 @@ body {
   background: $main-bg;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .sidebar {
@@ -29,6 +30,7 @@ body {
   bottom: 0;
   width: $sidebar-width;
   background-color: $sidebar-bg;
+  padding-top: 40px;
 
   .aside-menu {
     list-style: none;
@@ -36,7 +38,10 @@ body {
     padding: 0;
     line-height: 1.5rem;
     &__list-item {
+      margin-top: 4px;
       .link {
+        font-size: 14px;
+        padding: 6px 16px;
         color: $sidebar-list-color;
         text-decoration: none;
       }
@@ -55,7 +60,9 @@ body {
     // }
     .sublist-menu {
       display: none;
+      padding-left: 10px;
       &__list-item {
+        margin-top: 4px;
         list-style: none;
       }
       .sublist-menu__list-item-active {

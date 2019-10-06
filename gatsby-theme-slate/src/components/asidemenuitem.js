@@ -16,7 +16,7 @@ export default class AsideMenuItem extends Component {
           className="link"
         >{link.textNode}</a>
         <ul
-          className={`sublist-menu ${isSublinkActive ? "sublist-menu-active" : ""}`}
+          className={`${isSublinkActive ? " sublist-menu sublist-menu-active" : ""}`}
           style={{ display: isSublinkActive ? "block" : "none" }}
         >
           {sublinks.map((sublink) => (
