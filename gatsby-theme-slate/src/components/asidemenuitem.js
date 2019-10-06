@@ -10,21 +10,23 @@ export default class AsideMenuItem extends Component {
     const sublinks = link.children
     const isSublinkActive = this.isChild(link, active)
     return (
-      <li>
+      <li className={`aside-menu__list-item ${active === link.id ? "aside-menu__list-item-active" : (isSublinkActive ? "aside-menu__list-item-active-parent" : "")}`}>
         <a
           href={`#${link.id}`}
-          className={`toc-h1 toc-link ${active === link.id ? "active" : (isSublinkActive ? "active-parent" : "")}`}
+          className="link"
         >{link.textNode}</a>
         <ul
-          className={`toc-list-h2 active ${isSublinkActive ? "active" : ""}`}
+          className={`sublist-menu ${isSublinkActive ? "sublist-menu-active" : ""}`}
           style={{ display: isSublinkActive ? "block" : "none" }}
         >
           {sublinks.map((sublink) => (
-            <a
-              key={sublink.id}
-              href={`#${sublink.id}`}
-              className={`toc-h2 toc-link ${active === sublink.id ? "active" : ""}`}
-            >{sublink.textNode}</a>
+            <li className={`sublist-menu__list-item ${active === sublink.id ? "sublist-menu__list-item-active" : ""}`}>
+              <a
+                key={sublink.id}
+                href={`#${sublink.id}`}
+                className="link"
+              >{sublink.textNode}</a>
+            </li>
           ))}
         </ul>
       </li>

@@ -5,7 +5,7 @@ export default class SideBar extends Component {
   render() {
     const { ast } = this.props
     return (
-      <div className="toc-wrapper">
+      <div className="sidebar">
         <AsideMenu ast={ast} />
       </div>
     )

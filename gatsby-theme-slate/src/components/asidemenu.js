@@ -52,7 +52,7 @@ export default class AsideMenu extends Component {
     const links = getLinks(ast)
     return (
       <React.Fragment>
-        <ul className="toc-list-h1">
+        <ul className="aside-menu">
           {links.map((link) =>
             <AsideMenuItem
               key={link.id}

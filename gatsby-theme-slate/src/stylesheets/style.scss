@@ -1,0 +1,56 @@
+$sidebar-width: 220px;
+$sidebar-bg: #f4f6f9;
+$sidebar-list-color: #333333;
+$sidebar-list-color-active: #2f80ed;
+
+body {
+  font-size: 14px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: 0;
+  width: $sidebar-width;
+  background-color: $sidebar-bg;
+
+  .aside-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+    &__list-item {
+      .link {
+        color: $sidebar-list-color;
+        text-decoration: none;
+      }
+    }
+    &__list-item-active {
+      .link {
+        color: $sidebar-list-color-active;
+        font-weight: 500;
+      }
+    }
+    // &__list-item-active-parent {
+    //   .link {
+    //     color: $sidebar-list-color-active;
+    //     font-weight: 500;
+    //   }
+    // }
+    .sublist-menu {
+      display: none;
+      &__list-item {
+        list-style: none;
+      }
+      .sublist-menu__list-item-active {
+        .link {
+          color: $sidebar-list-color-active;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
