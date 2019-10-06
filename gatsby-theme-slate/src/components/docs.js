@@ -37,7 +37,7 @@ export default class Docs extends Component {
     return (
       <React.Fragment>
         <SideBar ast={ast}/>
-        <div className="page-wrapper">
+        <div className="container">
           <LangSelector
             options={options}
             selected={selected}
@@ -45,7 +45,7 @@ export default class Docs extends Component {
           <Contents
             htmlAst={ast}
             language={selected} />
-          <div className="dark-box"></div>
+          <div className="code-bg"></div>
         </div>
       </React.Fragment>
     )

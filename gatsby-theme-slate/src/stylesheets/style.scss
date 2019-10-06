@@ -1,10 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+$main-bg: #fff;
 $sidebar-width: 220px;
 $sidebar-bg: #f4f6f9;
 $sidebar-list-color: #333333;
 $sidebar-list-color-active: #2f80ed;
+$code-container-width: 50%;
+$code-container-bg: #2a3138;
+$aside-info-bg: #2F80ED;
+$aside-success-bg: #27AE60;
+$aside-warning-bg: #EB5757;
 
+html,
 body {
+  margin: 0;
+  padding: 0;
+  background: $main-bg;
   font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sidebar {
@@ -52,5 +65,119 @@ body {
         }
       }
     }
+  }
+}
+
+.container {
+  position: relative;
+  margin-left: $sidebar-width;
+  min-height: 100%;
+
+  .code-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: $code-container-width;
+    background: $code-container-bg;
+  }
+
+  .lang-selector {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    a {
+      display: block;
+      float: left;
+      cursor: pointer;
+      padding: 10px;
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.content>div {
+  position: relative;
+  -webkit-transform: translateZ(0);
+  z-index: 30;
+
+  h1, h2, h3, p, aside, table {
+    margin-left: 40px;
+    margin-right: calc(#{$code-container-width} + 30px);
+  }
+
+  h1, h2, h3 {
+    color: #333333;
+  }
+
+  &>h1, &>h2, &>div {
+    clear:both;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #E0E0E0; 
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+
+  h1:first-child, div:first-child + h1 {
+    margin-top: 0;
+  }
+
+  p {
+    color: #5B5B5B;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  aside {
+    position: relative;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+    background: #F6F6F7;
+    line-height: 1.6;
+    &:before {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background: $aside-info-bg;
+    }
+
+    &.warning {
+      &:before {
+        background: $aside-warning-bg;
+      }
+    }
+
+    &.success {
+      &:before {
+        background: $aside-success-bg;
+      }
+    }
+  }
+}
+
+.remarked-linked-header {
+  position: relative;
+  a {
+    display: none;
+    position: absolute;
+    left: -20px;
   }
 }

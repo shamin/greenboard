@@ -4,7 +4,7 @@ export default class LangSelector extends Component {
   render() {
     const { options, selected, setLang } = this.props
     return (
-      <div className="dark-box">
+      <div className="code-bg">
         <div className="lang-selector">
           {options.map((e) => (
             // eslint-disable-next-line
