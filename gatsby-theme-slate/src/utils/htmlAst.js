@@ -26,11 +26,11 @@ const fetchChildType = (code_block) => {
   return code_block.children[0].properties.className[0]
 }
 
-export const remarkHeaders = (ast)=>{
+export const remarkHeaders = (ast) => {
   const slugger = new Slugger()
 
-  const newChildren = ast.children.map((element)=>{
-    if(element.tagName === "h1" || element.tagName === "h2") {
+  const newChildren = ast.children.map((element) => {
+    if (element.tagName === "h1" || element.tagName === "h2") {
       const id = slugger.slug(element.children[0].value);
       return {
         ...element,
@@ -86,3 +86,40 @@ export const remarkHeaders = (ast)=>{
     children: newChildren
   }
 }
+
+export const getLinks = (ast) => {
+  const headers = ast.children.filter(el => el.type === 'element' && _.includes(['h1', 'h2'], el.tagName));
+
+  const beautified = headers.map((header) => {
+    const link = {};
+    link.tagName = header.tagName;
+    link.textNode = header.children[1] ? header.children[1].value : '';
+    link.id = header.properties.id;
+    return link;
+  });
+
+  let h2s, h1Element
+  const merged = []
+  beautified.forEach((heading, index) => {
+    if (heading.tagName === "h1") {
+      if (h2s !== undefined) {
+        merged.push({
+          ...h1Element,
+          children: h2s
+        })
+      }
+      h2s = []
+      h1Element = heading
+    } else if (heading.tagName === "h2") {
+      h2s.push(heading)
+    }
+  })
+  if (h2s !== undefined) {
+    merged.push({
+      ...h1Element,
+      children: h2s
+    })
+  }
+  return merged
+}
+

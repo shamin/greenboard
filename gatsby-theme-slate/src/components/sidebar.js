@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import AsideMenu from './asidemenu'
 
 export default class SideBar extends Component {
   render() {
-    const { language } = this.props
+    const { ast } = this.props
     return (
-      <div></div>
+      <div className="toc-wrapper">
+        <AsideMenu ast={ast} />
+      </div>
     )
   }
 }

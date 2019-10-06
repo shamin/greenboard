@@ -7,6 +7,7 @@ export default class LangSelector extends Component {
       <div className="dark-box">
         <div className="lang-selector">
           {options.map((e) => (
+            // eslint-disable-next-line
             <a
               key={e}
               onClick={() => setLang(e)}

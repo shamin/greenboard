@@ -3,11 +3,11 @@ import RehypeReact from 'rehype-react'
 import Pre from './pre'
 import { parseCodeBlocks } from '../utils/htmlAst'
 
-const renderAst = (codeBlocks, elementsRendered, updateRendered, language) => {
+const renderAst = (codeBlocks, elementsRendered, updateRendered, selectedLanguage) => {
   return new RehypeReact({
     createElement: React.createElement,
     components: {
-      'pre': Pre(codeBlocks, elementsRendered, updateRendered, language)
+      'pre': Pre(codeBlocks, elementsRendered, updateRendered, selectedLanguage)
     },
   }).Compiler;
 }

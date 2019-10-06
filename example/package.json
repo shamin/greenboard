@@ -7,6 +7,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build --prefix-paths",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -14,5 +15,8 @@
     "gatsby-theme-slate": "*",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

@@ -3,9 +3,10 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 
 export default class Code extends Component {
   render() {
-    const { language } = this.props
+    const { code, language } = this.props
+
     return (
-      <Highlight {...defaultProps} code={this.props.codes[`language-${language}`].children[0].children[0].value} language="javascript" >
+      <Highlight {...defaultProps} code={code} language={language} >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (

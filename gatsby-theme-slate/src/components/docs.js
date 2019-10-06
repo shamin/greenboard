@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Contents from './contents'
-import AsideMenu from './asidemenu'
 import LangSelector from './langselector'
 import { remarkHeaders } from '../utils/htmlAst'
+import SideBar from './sidebar'
 
 export default class Docs extends Component {
   constructor(props) {
@@ -33,9 +33,7 @@ export default class Docs extends Component {
     const ast = remarkHeaders(docs.htmlAst)
     return (
       <React.Fragment>
-        <div className="toc-wrapper">
-          <AsideMenu ast={ast}/>
-        </div>
+        <SideBar ast={ast}/>
         <div className="page-wrapper">
           <LangSelector
             options={options}

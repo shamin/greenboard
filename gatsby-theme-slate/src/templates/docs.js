@@ -13,7 +13,7 @@ export default class DocTemplate extends Component {
 }
 
 export const pageQuery = graphql`
-  query MyQuery {
+  query {
     markdownRemark(fileAbsolutePath: {ne: "docs/index.md"}) {
       html
       htmlAst
