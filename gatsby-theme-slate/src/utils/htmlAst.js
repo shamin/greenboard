@@ -123,3 +123,25 @@ export const getLinks = (ast) => {
   return merged
 }
 
+export const getSearchableData = (ast) => {
+  const searchData = []
+  let searchItem = {}
+  ast.children.forEach((e) => {
+    if (_.includes(["h1", "h2"], e.tagName)) {
+      if (!_.isEmpty(searchItem)) {
+        searchData.push(searchItem)
+      }
+      searchItem = {
+        heading: e.children[1].value,
+        id: e.properties.id,
+        children: []
+      }
+    } else if (_.includes(["p", "h3"], e.tagName)) {
+      searchItem.children.push({
+        type: e.tagName,
+        text: e.children[0].value
+      })
+    }
+  })
+  return searchData
+}

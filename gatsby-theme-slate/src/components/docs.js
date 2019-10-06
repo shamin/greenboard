@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Contents from './contents'
 import LangSelector from './langselector'
-import { remarkHeaders } from '../utils/htmlAst'
+import { remarkHeaders, getSearchableData } from '../utils/htmlAst'
 import SideBar from './sidebar'
 
 export default class Docs extends Component {
@@ -31,6 +31,7 @@ export default class Docs extends Component {
     const { docs } = this.props
     const { options, selected } = this.state
     const ast = remarkHeaders(docs.htmlAst)
+    console.log(getSearchableData(ast))
     return (
       <React.Fragment>
         <SideBar ast={ast}/>
