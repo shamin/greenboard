@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 
 $main-bg: #fff;
 $sidebar-width: 220px;
@@ -7,9 +7,9 @@ $sidebar-list-color: #333333;
 $sidebar-list-color-active: #2f80ed;
 $code-container-width: 50%;
 $code-container-bg: #2a3138;
-$aside-info-bg: #2F80ED;
-$aside-success-bg: #27AE60;
-$aside-warning-bg: #EB5757;
+$aside-info-bg: #2f80ed;
+$aside-success-bg: #27ae60;
+$aside-warning-bg: #eb5757;
 
 html,
 body {
@@ -17,7 +17,7 @@ body {
   padding: 0;
   background: $main-bg;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .sidebar {
@@ -98,38 +98,48 @@ body {
   }
 }
 
-.content>div {
+.content > div {
   position: relative;
   -webkit-transform: translateZ(0);
   z-index: 30;
 
-  h1, h2, h3, p, aside, table {
+  h1,
+  h2,
+  h3,
+  p,
+  aside,
+  table {
     margin-left: 40px;
-    margin-right: calc(#{$code-container-width} + 30px);
+    margin-right: calc(#{$code-container-width} + 40px);
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
     color: #333333;
   }
 
-  &>h1, &>h2, &>div {
-    clear:both;
+  & > h1,
+  & > h2,
+  & > div {
+    clear: both;
   }
 
   h1 {
     font-size: 24px;
-    font-weight: 600;
-    border-bottom: 1px solid #E0E0E0; 
+    border-bottom: 1px solid #e0e0e0;
     padding-top: 40px;
     padding-bottom: 15px;
   }
 
-  h1:first-child, div:first-child + h1 {
+  h1:first-child,
+  div:first-child + h1 {
     margin-top: 0;
   }
 
   p {
-    color: #5B5B5B;
+    color: #5b5b5b;
   }
 
   h2 {
@@ -147,7 +157,7 @@ body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     padding-left: 20px;
-    background: #F6F6F7;
+    background: #f6f6f7;
     line-height: 1.6;
     &:before {
       content: "";
@@ -169,6 +179,33 @@ body {
       &:before {
         background: $aside-success-bg;
       }
+    }
+  }
+
+  pre,
+  blockquote {
+    color: #fff;
+    margin: 0;
+    width: $code-container-width;
+
+    float: right;
+    clear: right;
+
+    box-sizing: border-box;
+    & > p {
+      margin: 0;
+    }
+  }
+
+  pre {
+    padding: 20px;
+  }
+
+  blockquote {
+    padding: 10px;
+    padding-left: 40px;
+    p {
+      color: #fff;
     }
   }
 }
