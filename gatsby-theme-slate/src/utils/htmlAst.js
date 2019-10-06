@@ -125,21 +125,21 @@ export const getLinks = (ast) => {
 
 export const getSearchableData = (ast) => {
   const searchData = []
-  let searchItem = {}
-  ast.children.forEach((e) => {
+  let searchHeader = {}
+  ast.children.forEach((e, i) => {
     if (_.includes(["h1", "h2"], e.tagName)) {
-      if (!_.isEmpty(searchItem)) {
-        searchData.push(searchItem)
-      }
-      searchItem = {
+      searchHeader = {
         heading: e.children[1].value,
         id: e.properties.id,
-        children: []
       }
     } else if (_.includes(["p", "h3"], e.tagName)) {
-      searchItem.children.push({
-        type: e.tagName,
-        text: e.children[0].value
+      searchData.push({
+        id: i,
+        searchHeader,
+        data: {
+          type: e.tagName,
+          text: e.children[0].value
+        }
       })
     }
   })
