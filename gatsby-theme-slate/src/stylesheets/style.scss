@@ -94,13 +94,19 @@ body {
     z-index: 100;
     position: fixed;
     width: 100%;
-    a {
+    box-shadow: 0px 0px 2px #00000036;
+    background: $code-container-bg;
+    &__tabs {
       display: block;
       float: left;
       cursor: pointer;
+      color: #fff;
+      opacity: 0.7;
       padding: 10px;
       &.active {
-        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+        border-bottom: 1px solid $sidebar-list-color-active;
       }
     }
   }
@@ -110,6 +116,7 @@ body {
   position: relative;
   -webkit-transform: translateZ(0);
   z-index: 30;
+  padding-bottom: 70px;
 
   h1,
   h2,

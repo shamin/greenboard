@@ -11,7 +11,7 @@ export default class LangSelector extends Component {
             <a
               key={e}
               onClick={() => setLang(e)}
-              className={selected === e ? "active" : ""}
+              className={`lang-selector__tabs ${selected === e ? "active" : ""}`}
             >{e}</a>))}
         </div>
       </div>

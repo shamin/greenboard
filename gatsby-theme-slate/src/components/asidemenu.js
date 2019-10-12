@@ -7,7 +7,7 @@ export default class AsideMenu extends Component {
     super(props)
 
     this.scrollSpy = this.scrollSpy.bind(this);
-    this.scrollSpyOffset = 300;
+    this.scrollSpyOffset = 100;
 
     this.state = {
       activeNavItem: false,
