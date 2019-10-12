@@ -10,6 +10,7 @@ $code-container-bg: #2a3138;
 $aside-info-bg: #2f80ed;
 $aside-success-bg: #27ae60;
 $aside-warning-bg: #eb5757;
+$code-font-family: "Roboto", sans-serif;
 
 html,
 body {
@@ -214,6 +215,55 @@ body {
     p {
       color: #fff;
     }
+  }
+
+  hr {
+    margin: 2em calc(50% + 40px) 2em 40px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 15px;
+  }
+
+  p, li, dt, dd {
+    line-height: 1.6;
+    margin-top: 0;
+  }
+
+  table {
+    overflow: auto;
+    th {
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 10px;
+      font-weight: 400;
+      code {
+        white-space: nowrap;
+      }
+    }
+    td {
+      text-align: left;
+      padding: 10px;
+      color: #4F4F4F;
+    }
+  }
+
+  code {
+    word-break: break-all;
+    font-family: $code-font-family;
+    font-size: 14px;
+    background: #efefef;
+    padding: 5px;
   }
 }
 
