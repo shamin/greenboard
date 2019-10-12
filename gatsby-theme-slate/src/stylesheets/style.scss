@@ -235,7 +235,10 @@ body {
     margin-left: 15px;
   }
 
-  p, li, dt, dd {
+  p,
+  li,
+  dt,
+  dd {
     line-height: 1.6;
     margin-top: 0;
   }
@@ -254,7 +257,7 @@ body {
     td {
       text-align: left;
       padding: 10px;
-      color: #4F4F4F;
+      color: #4f4f4f;
     }
   }
 
@@ -263,7 +266,16 @@ body {
     font-family: $code-font-family;
     font-size: 14px;
     background: #efefef;
-    padding: 5px;
+    padding: 3px;
+    color: #5b5b5b;
+  }
+
+  pre {
+    font-size: 13px;
+  }
+
+  a {
+    color: $sidebar-list-color-active;
   }
 }
 

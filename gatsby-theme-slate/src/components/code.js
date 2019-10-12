@@ -6,7 +6,7 @@ export default class Code extends Component {
     const { code, language } = this.props
 
     return (
-      <Highlight {...defaultProps} code={code} language={language} >
+      <Highlight {...defaultProps} code={code} language={language} theme={undefined}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
