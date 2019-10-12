@@ -8,5 +8,5 @@ export const indexSearchData = (searchData) => {
 
   search.addDocuments(searchData)
 
-  console.log(search.search('Kittn uses'))  
+  return search
 }
