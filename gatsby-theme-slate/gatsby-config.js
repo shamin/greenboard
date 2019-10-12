@@ -9,6 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`
   ],
 }

@@ -41,7 +41,7 @@ body {
     &__list-item {
       margin-top: 4px;
       .link {
-        font-size: 14px;
+        font-size: 15px;
         padding: 6px 16px;
         color: $sidebar-list-color;
         text-decoration: none;
@@ -65,6 +65,9 @@ body {
       &__list-item {
         margin-top: 4px;
         list-style: none;
+      }
+      .link {
+        font-size: 14px;
       }
       .sublist-menu__list-item-active {
         .link {
