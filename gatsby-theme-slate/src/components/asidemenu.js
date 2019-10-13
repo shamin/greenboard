@@ -58,17 +58,15 @@ export default class AsideMenu extends Component {
     const { activeNavItem } = this.state
     const links = getLinks(ast)
     return (
-      <React.Fragment>
-        <ul className="aside-menu">
-          {links.map((link) =>
-            <AsideMenuItem
-              key={link.id}
-              link={link}
-              active={activeNavItem.slug}
-            />
-          )}
-        </ul>
-      </React.Fragment>
+      <ul className="aside-menu">
+        {links.map((link) =>
+          <AsideMenuItem
+            key={link.id}
+            link={link}
+            active={activeNavItem.slug}
+          />
+        )}
+      </ul>
     )
   }
 }
