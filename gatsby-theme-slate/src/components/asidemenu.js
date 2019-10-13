@@ -43,6 +43,7 @@ export default class AsideMenu extends Component {
 
     const headersScrollTop = headersOffset.filter(el => el.offset > 0);
 
+    window.location.hash = headersScrollTop[0].slug
     this.setState({ activeNavItem: headersScrollTop[0] });
   }
 

@@ -19,7 +19,6 @@ export default class SearchBar extends Component {
   componentDidMount() {
     const searchData = getSearchableData(this.props.ast)
     this.search = indexSearchData(searchData)
-    console.log(this.search.search('Kittn uses'))
   }
 
   searchItem(e) {
@@ -34,26 +33,27 @@ export default class SearchBar extends Component {
   }
 
   searchBarBlurred(e) {
-    this.setState({
-      searchFocussed: false
-    })
+    setTimeout(() => {
+      this.setState({
+        searchFocussed: false
+      })
+    }, 200);
   }
 
   renderResults(searchResults) {
     if (searchResults.length <= 0) {
-      return <p>No results found</p>
+      return <p className="search-results__empty-state">No results found</p>
     }
-    return searchResults.map((result) => (
-      <div className="search-results__item">
+    return searchResults.filter((result) => result.data.text).map((result) => (
+      <a href={`#${result.searchHeader.id}`} className="search-results__item">
         <h4>{result.searchHeader.heading}</h4>
         <p>{result.data.text}</p>
-      </div>
+      </a>
     ))
   }
 
   render() {
     const { searchResults, searchFocussed, query } = this.state
-    console.log(searchFocussed)
     return (
       <div className="search-bar">
         <input className="search-input" type="text" placeholder="Search" onChange={this.searchItem} onBlur={this.searchBarBlurred} onFocus={this.searchBarFocussed} />

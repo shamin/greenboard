@@ -329,9 +329,11 @@ body {
     max-height: 400px;
     overflow: scroll;
     padding: 10px 0;
-    .search-results__item {
+    &__item {
       cursor: pointer;
       padding: 15px 20px;
+      display: block;
+      text-decoration: none;
       &:hover {
         background: rgba(47, 128, 237, 0.1);
       }
@@ -349,6 +351,10 @@ body {
         color: $aside-info-bg;
         font-weight: 500;
       }
+    }
+    &__empty-state {
+      padding: 10px 15px;
+      color: #5b5b5b;
     }
   }
 }
