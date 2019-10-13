@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Contents from './contents'
 import LangSelector from './langselector'
-import { remarkHeaders, getSearchableData } from '../utils/htmlAst'
+import { remarkHeaders } from '../utils/htmlAst'
 import SideBar from './sidebar'
 
 export default class Docs extends Component {

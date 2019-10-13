@@ -45,7 +45,7 @@ export default class SearchBar extends Component {
       return <p className="search-results__empty-state">No results found</p>
     }
     return searchResults.filter((result) => result.data.text).map((result) => (
-      <a href={`#${result.searchHeader.id}`} className="search-results__item">
+      <a key={result.searchHeader.id + result.data.text} href={`#${result.searchHeader.id}`} className="search-results__item">
         <h4>{result.searchHeader.heading}</h4>
         <p>{result.data.text}</p>
       </a>
