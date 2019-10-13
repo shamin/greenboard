@@ -9,7 +9,7 @@ export default class DocTemplate extends Component {
   render() {
     const docsData = this.props.data.markdownRemark
     return (
-      <>
+      <React.Fragment>
         <Helmet
           title={docsData.frontmatter.title}
           meta={[
@@ -19,7 +19,7 @@ export default class DocTemplate extends Component {
           <html lang="en" />
         </Helmet>
         <Docs docs={docsData} />
-      </>
+      </React.Fragment>
     )
   }
 }

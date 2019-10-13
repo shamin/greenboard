@@ -26,7 +26,7 @@ export default function PreContainer(codeBlocks, elementsRendered, updateRendere
           language={selectedLanguage}
         />)
     }
-    return <></>
+    return <React.Fragment />
   }
 }
 
