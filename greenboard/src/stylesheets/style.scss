@@ -32,6 +32,10 @@ body {
   background-color: $sidebar-bg;
   padding-top: 40px;
 
+  .mobile-select-menu-cont {
+    display: none;
+  }
+
   .aside-menu {
     list-style: none;
     margin: 0;

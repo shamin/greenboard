@@ -9,7 +9,7 @@
     "build-example": "yarn workspace example build"
   },
   "workspaces": [
-    "gatsby-theme-slate",
+    "greenboard",
     "example"
   ]
 }

@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [{ resolve: `gatsby-theme-slate`, options: {} }],
+  plugins: [{ resolve: `greenboard`, options: {} }],
 }
