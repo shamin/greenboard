@@ -1,12 +1,16 @@
 {
   "name": "greenboard",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/shamin/greenboard.git"
   },
   "peerDependencies": {
     "gatsby": "^2.15.28",

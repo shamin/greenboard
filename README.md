@@ -1,12 +1,10 @@
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Gatsby" src="./logo/logo.png" width="150" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby Slate Theme
+  Greenboard
 </h1>
 
-### `gatsby-slate`
-
-Covert your slate api docs to gatsby with gatsby-slate 
+Covert your slate api docs to gatsby with greenboard
