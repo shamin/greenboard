@@ -15,6 +15,9 @@ includes:
   - errors
 
 search: true
+
+attachments:
+  - "./logo.png"
 ---
 
 # Introduction
