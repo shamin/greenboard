@@ -1,13 +1,6 @@
-<p align="center">
-  <a href="https://greenboard.surge.sh">
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/shamin/greenboard/master/logo/logo.png" width="150" />
-  </a>
-</p>
-<h1 align="center">
-  Greenboard
-</h1>
+# Greenboard
 
-Covert your slate api docs to gatsby with greenboard
+Convert your slate api docs to gatsby with greenboard
 
 ## Installation
 
@@ -26,7 +19,7 @@ yarn add greenboard
 ```
 
 
-Then greenboard to your `gatsby-config.js`. 
+Then add `greenboard` to your `gatsby-config.js`. 
 
 ```javascript
 module.exports = {

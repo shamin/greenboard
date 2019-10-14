@@ -7,7 +7,7 @@
   Greenboard
 </h1>
 
-Covert your slate api docs to gatsby with greenboard
+Convert your slate api docs to gatsby with greenboard
 
 ## Installation
 
@@ -26,7 +26,7 @@ yarn add greenboard
 ```
 
 
-Then greenboard to your `gatsby-config.js`. 
+Then add greenboard to your `gatsby-config.js`. 
 
 ```javascript
 module.exports = {
