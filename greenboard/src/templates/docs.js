@@ -32,6 +32,7 @@ export const pageQuery = graphql`
       frontmatter {
         language_tabs
         title
+        footer
         attachments {
           publicURL
         }

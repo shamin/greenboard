@@ -35,7 +35,7 @@ export default class Docs extends Component {
     
     return (
       <React.Fragment>
-        <SideBar ast={ast} logoUrl={logoUrl}/>
+        <SideBar ast={ast} logoUrl={logoUrl} footer={docs.frontmatter.footer}/>
         <div className="container">
           <LangSelector
             options={options}
