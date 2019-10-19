@@ -32,10 +32,11 @@ export default class Docs extends Component {
     const { options, selected } = this.state
     const ast = remarkHeaders(docs.htmlAst)
     const logoUrl = docs.frontmatter.attachments[0].publicURL
+    const {footer, search} = docs.frontmatter
     
     return (
       <React.Fragment>
-        <SideBar ast={ast} logoUrl={logoUrl} footer={docs.frontmatter.footer}/>
+        <SideBar ast={ast} logoUrl={logoUrl} footer={footer} search={search}/>
         <div className="container">
           <LangSelector
             options={options}

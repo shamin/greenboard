@@ -33,6 +33,7 @@ export const pageQuery = graphql`
         language_tabs
         title
         footer
+        search
         attachments {
           publicURL
         }

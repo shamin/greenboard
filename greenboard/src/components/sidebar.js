@@ -6,11 +6,11 @@ import FooterLinks from './footerlinks';
 
 export default class SideBar extends Component {
   render() {
-    const { ast, logoUrl, footer } = this.props
+    const { ast, logoUrl, footer, search } = this.props
     return (
       <div className="sidebar">
         <img className="logo" src={logoUrl} />
-        <SearchBar ast={ast}/>
+        {search && <SearchBar ast={ast}/>}
         <AsideMenu ast={ast} />
         <FooterLinks footer={footer}/>
         <MobileSelectMenu ast={ast}/>
