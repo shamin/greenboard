@@ -3,6 +3,7 @@ import Contents from './contents'
 import LangSelector from './langselector'
 import { remarkHeaders } from '../utils/htmlAst'
 import SideBar from './sidebar'
+import DarkModeSwitch from './darkmodeswitch'
 
 export default class Docs extends Component {
   constructor(props) {
@@ -11,13 +12,15 @@ export default class Docs extends Component {
       options: [],
       selected: ""
     }
+    this.updateMode = this.updateMode.bind(this)
   }
 
   componentWillMount() {
     const langs = this.props.docs.frontmatter.language_tabs
     this.setState({
       options: langs,
-      selected: langs[0]
+      selected: langs[0],
+      darkMode: false
     })
 
     this.setLang = this.setLang.bind(this)
@@ -27,17 +30,23 @@ export default class Docs extends Component {
     this.setState({ selected: lang });
   }
 
+  updateMode() {
+    this.setState(prevState => ({
+      darkMode: !prevState.darkMode
+    }))
+  }
+
   render() {
     const { docs } = this.props
-    const { options, selected } = this.state
+    const { options, selected, darkMode } = this.state
     const ast = remarkHeaders(docs.htmlAst)
     const logoUrl = docs.frontmatter.attachments[0].publicURL
-    const {footer, search} = docs.frontmatter
-    
+    const { footer, search } = docs.frontmatter
+
     return (
       <React.Fragment>
-        <SideBar ast={ast} logoUrl={logoUrl} footer={footer} search={search}/>
-        <div className="container">
+        <SideBar darkMode={darkMode} ast={ast} logoUrl={logoUrl} footer={footer} search={search} />
+        <div className={`container ${darkMode ? "dark" : ""}`}>
           <LangSelector
             options={options}
             selected={selected}
@@ -47,6 +56,7 @@ export default class Docs extends Component {
             language={selected} />
           <div className="code-bg"></div>
         </div>
+        <DarkModeSwitch darkMode={darkMode} updateMode={this.updateMode} />
       </React.Fragment>
     )
   }

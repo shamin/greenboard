@@ -93,6 +93,7 @@ body {
   position: relative;
   margin-left: $sidebar-width;
   min-height: 100%;
+  transition: 1s ease;
 
   .code-bg {
     position: absolute;
@@ -377,4 +378,5 @@ body {
   }
 }
 
-@import './responsive.scss'
+@import './responsive.scss';
+@import './dark.scss';

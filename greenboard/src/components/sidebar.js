@@ -6,9 +6,9 @@ import FooterLinks from './footerlinks';
 
 export default class SideBar extends Component {
   render() {
-    const { ast, logoUrl, footer, search } = this.props
+    const { ast, logoUrl, footer, search, darkMode } = this.props
     return (
-      <div className="sidebar">
+      <div className={`sidebar ${darkMode ? "dark" : ""}`}>
         <img className="logo" src={logoUrl} />
         {search && <SearchBar ast={ast}/>}
         <AsideMenu ast={ast} />
