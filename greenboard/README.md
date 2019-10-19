@@ -1,6 +1,12 @@
 # Greenboard
 
-Convert your slate api docs to gatsby with greenboard
+Create beautiful api documentation with gatsby and greenboard
+
+## Features
+- Generate static site from markdown
+- Get all features of gatsby and react
+- Fully customizable
+- Dark Mode
 
 ## Installation
 
@@ -42,4 +48,12 @@ Build the production files
 
 ```shell
 yarn gatsby build
+```
+
+## Customization
+To get more customization fork this repo and run your docs.
+
+To run example locally
+```shell
+yarn workspace example develop
 ```
