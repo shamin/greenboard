@@ -45,6 +45,8 @@ module.exports = {
   ],
 }
 ```
+Now create your api documentation in `data/index.html.md`. You can check a sample format in [here](./example/data/index.html.md)
+
 
 That's it, you can now run your gatsby site using
 
