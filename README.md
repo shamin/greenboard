@@ -68,3 +68,6 @@ To run example locally
 ```shell
 yarn workspace example develop
 ```
+
+## Help
+If you need some help you can contact me on my email [shamin616@gmail.com](mailto:shamin616@gmail.com)
