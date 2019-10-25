@@ -62,11 +62,39 @@ yarn gatsby build
 
 
 ## Customization
-To get more customization fork this repo and run your docs.
+To get more customization fork this repo.
+
+Clone the repo
+```shell
+https://github.com/shamin/greenboard.git
+```
+
+Travese to the folder
+```shell
+cd greenboard
+```
+
+Install dependencies
+```shell
+yarn
+```
 
 To run example locally
 ```shell
 yarn workspace example develop
+```
+
+To build example 
+```shell
+yarn workspace example build
+```
+
+To run the build files locally with serve
+```
+npm install -g serve
+
+cd example/build
+serve
 ```
 
 ## Help
