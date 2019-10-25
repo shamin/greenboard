@@ -90,12 +90,31 @@ yarn workspace example build
 ```
 
 To run the build files locally with serve
-```
+```shell
 npm install -g serve
 
 cd example/build
 serve
 ```
+
+To deploy example to github pages
+```shell
+yarn workspace example deploy
+```
+
+## FAQs
+### How can I deploy the docs to a non root path
+Add the `pathPrefix` to `gatsby-config.js` in your docs folder
+```javascript
+module.exports = {
+  pathPrefix: `/docs`,
+}
+```
+Run build command
+```
+yarn workspace example build
+```
+For more information visit https://www.gatsbyjs.org/docs/path-prefix/
 
 ## Help
 If you need some help you can contact me on my email [shamin616@gmail.com](mailto:shamin616@gmail.com)
