@@ -30,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 
   const basePath = '/'
-  const docTemplate = require.resolve(`./src/templates/docs.js`)
+  const docTemplate = require.resolve(`./src/templates/docs.jsx`)
 
   actions.createPage({
     path: basePath,
