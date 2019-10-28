@@ -1,6 +1,6 @@
 {
-  "name": "greenboard",
-  "version": "1.0.0",
+  "name": "gatsby-greenboard",
+  "version": "0.1.8",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
