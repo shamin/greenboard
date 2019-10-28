@@ -19,13 +19,13 @@ yarn add gatsby-greenboard
 ```
 
 
-Then add `greenboard` to your `gatsby-config.js`. 
+Then add `gatsby-greenboard` to your `gatsby-config.js`. 
 
 ```javascript
 module.exports = {
   plugins: [
     {
-      resolve: "greenboard",
+      resolve: "gatsby-greenboard",
       options: {},
     },
   ],
