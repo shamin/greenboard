@@ -29,7 +29,7 @@ yarn add gatsby react react-dom
 
 Install greenboard
 ```shell
-yarn add greenboard
+yarn add gatsby-greenboard
 ```
 
 
