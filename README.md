@@ -7,6 +7,10 @@
   Greenboard
 </h1>
 
+<p align="center">
+  <a href="https://www.producthunt.com/posts/greenboard?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-     greenboard" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=171674&theme=dark&period=daily" alt="Greenboard - Generate beautiful static api documentation  | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
+</p>
+
 Create beautiful api documentation with gatsby and greenboard
 
 ## Features
